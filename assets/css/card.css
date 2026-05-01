@@ -1,0 +1,64 @@
+/* การ์ดหลัก */
+.featured-card {
+    background-color: var(--base-variant);
+    border-radius: 1.5rem;
+    padding: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* ให้การ์ดสูงเท่ากันใน Grid */
+    transition: transform 0.3s ease;
+}
+.featured-card:hover {
+    transform: translateY(-10px);
+}
+
+/* รูปภาพและการจัดการรูป */
+.project-img-container {
+    width: 100%;
+    height: 200px;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+.project-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* ข้อมูลภายใน */
+.project-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* ดันปุ่มให้ลงล่างสุด */
+    text-align: left;
+}
+
+.project-tag {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.project-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-color);
+    font-weight: 800;
+}
+
+/* Responsive สำหรับ Card */
+@media (max-width: 768px) {
+    .project-info {
+        padding: 2rem;
+    }
+    .project-info h3 {
+        font-size: 1.8rem;
+    }
+}

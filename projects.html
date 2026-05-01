@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Patinya - Website</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/card.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/skill.css">
+    <link rel="stylesheet" href="assets/css/project.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+
+    <script src="assets/data/projects.js"></script>
+    <script src="assets/js/modal.js"></script>
+
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/darkmode.js"></script>
+    <script src="assets/js/hero.js"></script>
+    <script src="assets/js/about.js"></script>
+    <script src="assets/js/skill.js"></script>
+    <script src="assets/js/project.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/footer.js"></script>
+
+    <script src="assets/js/all-projects.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12.1.1/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiper@12.1.1/swiper-bundle.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <m-navbar></m-navbar>
+    <m-modal></m-modal>
+    <div class="main-content-area" style="position: relative; min-height: 50vh;">
+        <div id="loader" class="loader-wrapper">
+            <div class="loader-content">
+                <div class="spinner"></div>
+                <p>Loading Projects...</p>
+            </div>
+        </div>
+        <m-all-projects></m-all-projects>
+    </div>
+    <m-footer></m-footer>
+
+</body>
+<script>
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("loader");
+
+        // ตั้ง timeout นิดนึง (เช่น 800ms) เพื่อให้ความรู้สึกว่ามันกำลังประมวลผลจริงๆ
+        setTimeout(() => {
+            loader.classList.add("loader-hidden");
+            // เพิ่ม class เพื่อให้เนื้อหาโปรเจกต์ค่อยๆ แสดงขึ้นมา
+            contentArea.classList.add("content-ready");
+        }, 800);
+    });
+</script>
+
+</html>

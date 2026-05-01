@@ -1,0 +1,129 @@
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-cancle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    line-height: 1;
+    border: 1px solid transparent;
+    height: 42px;
+}
+
+.btn-secondary:hover,
+.btn-success:hover,
+.btn-cancle:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary:active,
+.btn-success:active,
+.btn-cancle:active,
+#back-to-top:active {
+    transform: scale(0.95);
+}
+
+/* Primary - ปุ่มข้อความเพียวๆ */
+.btn-primary {
+    height: 42px;
+    color: var(--text-color);
+}
+
+.btn-primary:hover {
+    color: var(--accent-color);
+}
+
+/* Secondary - ปุ่มส้ม */
+.btn-secondary {
+    border-color: var(--accent-color);
+    color: var(--base-color);
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 15px rgba(239, 128, 9, 0.3);
+}
+
+.btn-secondary:hover {
+    background-color: rgb(213, 119, 18);
+    box-shadow: 0 8px 25px rgba(239, 128, 9, 0.5);
+}
+
+/* Success - ปุ่มเขียว */
+.btn-success {
+    background-color: #22c55e;
+    color: white;
+    width: 100%;
+}
+
+.btn-success:hover {
+    background-color: #16a34a;
+    box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.3);
+}
+
+/* Cancle - ปุ่มเทา */
+.btn-cancle {
+    background-color: #7b7f7d;
+    color: white;
+    width: 100%;
+}
+
+.btn-cancle:hover {
+    background-color: #5d605f;
+    box-shadow: 0 10px 15px -3px rgba(92, 94, 93, 0.3);
+}
+
+/* --- Dark Mode Overrides --- */
+.dark .btn-secondary {
+    color: var(--text-color);
+    border-color: var(--secondary-text);
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.dark .btn-secondary:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-text);
+    background-color: rgba(239, 128, 9, 0.1);
+}
+
+/* --- Back to Top --- */
+#back-to-top {
+    background-color: var(--accent-color) !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#back-to-top:hover {
+    transform: scale(1.1) translateY(-5px) !important;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    background: var(--base-variant);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.filter-btn:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.filter-btn.active {
+    background: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(239, 128, 9, 0.3);
+}

@@ -1,0 +1,150 @@
+/* --- Layout & Links --- */
+.nav-link {
+    color: var(--secondary-text) !important;
+    font-weight: 500;
+    transition: 0.3s;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+#main-nav {
+    background-color: var(--base-color) !important;
+    border-bottom: 1px solid var(--base-variant) !important;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
+    z-index: 1000 !important;
+}
+
+/* --- Logo Switch --- */
+.logo-dark,
+.dark .logo-light {
+    display: none;
+}
+
+.logo-light,
+.dark .logo-dark {
+    display: block;
+}
+
+/* --- Toggle & Menu --- */
+#theme-toggle,
+#mobile-menu-btn {
+    width: 42px;
+    height: 42px;
+    background-color: var(--text-color) !important;
+    border: 1px solid var(--base-variant);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* --- เอฟเฟกต์ตอน Hover ให้เหมือนกัน --- */
+.dark #theme-toggle,
+.dark #mobile-menu-btn {
+    background-color: var(--base-variant) !important;
+}
+
+/* --- ตั้งค่า Hover ให้ทั้งสองปุ่มทำงานเหมือนกัน --- */
+#theme-toggle:hover,
+#mobile-menu-btn:hover {
+    background-color: var(--accent-color) !important;
+    transform: scale(1.05);
+}
+
+#theme-toggle:hover .icon-toggle,
+#mobile-menu-btn:hover .icon-menu {
+    filter: none !important;
+}
+
+/* --- Icons Logic --- */
+.icon-toggle,
+.icon-menu {
+    width: 24px !important;
+    height: 24px !important;
+    display: none !important;
+}
+
+.icon-menu {
+    display: block !important;
+}
+
+#mobile-menu-btn:active .icon-menu {
+    transform: scale(0.9);
+    /* เอฟเฟกต์ตอนกดปุ่ม */
+}
+
+/* --- ปรับแต่ง Dropdown Menu มือถือ --- */
+#mobile-menu-content {
+    background-color: var(--base-color) !important;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#mobile-menu-content .nav-link {
+    display: block;
+    padding: 0.85rem 1.25rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--base-variant);
+    color: var(--text-color) !important;
+    transition: all 0.2s ease;
+    text-decoration: none !important;
+}
+
+#mobile-menu-content .nav-link:hover {
+    text-decoration: none !important;
+    color: var(--accent-color) !important;
+    background-color: var(--base-variant);
+    padding-left: 1.75rem;
+}
+
+#mobile-menu-content .nav-link:last-child {
+    border-bottom: none;
+}
+
+/* กลับเป็นสีดั้งเดิมของ SVG */
+html:not(.dark) .moon-icon,
+.dark .sun-icon {
+    display: inline-block !important;
+    animation: fadeInRotate 0.4s ease forwards;
+}
+
+@media (min-width: 768px) {
+    #mobile-menu-btn {
+        display: none !important;
+    }
+}
+
+@keyframes fadeInRotate {
+    from {
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}

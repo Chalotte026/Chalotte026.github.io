@@ -1,0 +1,166 @@
+/* assets/css/contact.css */
+
+.contact-section {
+    padding: 60px 0;
+    background-color: rgba(239, 128, 9, 0.4) !important;
+    position: relative;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    background-color: var(--base-color);
+    border-radius: 2rem;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    margin-top: 2rem;
+}
+
+.contact-form-area {
+    padding: 3.5rem;
+    background-color: var(--base-color);
+}
+
+.contact-info-area {
+    padding: 3.5rem;
+    background-color: var(--base-variant);
+    justify-content: center;
+    align-items: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.dark .contact-info-area {
+    background-color: var(--base-color);
+}
+
+/* สไตล์ของ Input */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-text);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background-color: var(--base-variant);
+    border: 1px solid var(--base-variant);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--secondary-text);
+    opacity: 0.7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: var(--base-variant);
+}
+
+.dark .contact-form-area {
+    background-color: var(--base-variant) !important;
+}
+
+.dark .form-group input,
+.dark .form-group textarea {
+    background-color: var(--text-color);
+    border-color: var(--base-variant);
+    color: var(--base-color);
+}
+
+/* Social Links ฝั่งขวา */
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.contact-method:last-child {
+    margin-bottom: 0;
+}
+
+.contact-method h4 {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+}
+
+.contact-method h4 .material-symbols-outlined {
+    font-size: 1.2rem !important;
+    color: var(--accent-color);
+}
+
+.contact-icon-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.contact-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.contact-link:hover {
+    color: var(--accent-color);
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(239, 128, 9, 0.1); /* สีส้มจางๆ */
+    border-top: 5px solid var(--accent-color); /* สีส้มหลัก */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 992px) {
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-area,
+    .contact-info-area {
+        padding: 2.5rem;
+    }
+
+    .contact-info-area {
+        align-items: center;
+        text-align: center;
+        padding: 2.5rem;
+    }
+
+    .contact-method {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

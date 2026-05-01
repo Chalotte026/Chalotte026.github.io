@@ -1,0 +1,81 @@
+/* assets/css/about.css */
+.about-section {
+    padding: 100px 0;
+    background-color: var(--base-color);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* ข้อมูลพื้นฐานซ้าย เนื้อหาขวา */
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-info-card {
+    background-color: var(--base-variant);
+    padding: 2.5rem;
+    border-radius: 2rem;
+    border: 1px solid var(--base-variant);
+}
+
+.about-info-item {
+    margin-bottom: 1.5rem;
+}
+
+.about-info-item label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+}
+
+.about-info-item p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+.about-text h2 span {
+    color: var(--accent-color);
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive */
+/* Responsive สำหรับมือถือ */
+@media (max-width: 768px) {
+    .about-grid {
+        display: flex;
+        flex-direction: column-reverse; 
+        gap: 2rem;
+        width: 100%; 
+    }
+
+    .about-info-card {
+        width: 100%;       
+        max-width: none;    /* ล้างค่าจำกัดความกว้างเดิม */
+        padding: 1.5rem;    /* ปรับ padding ให้พอดีกับจอเล็ก */
+        margin: 0 auto;     /* จัดวางไว้ตรงกลาง */
+    }
+
+    .about-text {
+        text-align: center; /* จัดตัวหนังสือให้อยู่ตรงกลางเพื่อความสวยงามในมือถือ */
+        width: 100%;
+    }
+
+    .about-info-item {
+        text-align: left;   /* แต่ข้อมูลในการ์ดยังคงให้ชิดซ้ายเพื่อให้อ่านง่าย */
+    }
+}

@@ -1,0 +1,136 @@
+/* assets/css/skills.css */
+.skills-section {
+    padding: 60px 0;
+    background-color: rgba(239, 128, 9, 0.4) !important;
+    position: relative;
+}
+
+.skills-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.skills-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.skills-header h2 span {
+    color: var(--accent-color);
+}
+
+/* Bento Grid Layout */
+.skills-bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(220px, auto);
+    gap: 1.5rem;
+}
+
+.bento-item {
+    background-color: var(--base-variant);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 1px solid var(--base-variant);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.bento-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 0 15px rgba(239, 128, 9, 0.1);
+}
+
+.bento-item h3 {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.tag {
+    background: var(--base-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.8rem;
+    font-size: 0.85rem;
+    border: 1px solid var(--base-variant);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    color: var(--secondary-text);
+}
+
+/* Custom Grid Sizes */
+.core {
+    grid-column: span 1;
+}
+
+.frontend.large {
+    grid-column: span 2;
+}
+
+.backend.tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.data {
+    grid-column: span 1;
+}
+
+.tools.large {
+    grid-column: span 2;
+}
+
+
+@media (max-width: 1024px) {
+    .skills-bento {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    .data {
+        grid-column: span 1;
+    }
+
+    .core,
+    .frontend.large,
+    .tools.large {
+        grid-column: span 2;
+    }
+
+    .backend.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-bento {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .core,
+    .frontend.large,
+    .backend.tall,
+    .data,
+    .tools.large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .bento-item {
+        padding: 1.5rem;
+    }
+}
